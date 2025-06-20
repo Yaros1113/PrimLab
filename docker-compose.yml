@@ -1,0 +1,38 @@
+services:
+  webapi:
+    build: ./backend/WebAPI
+    ports:
+      - "5000:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=db;Database=PrimLabDB;User=sa;Password=Password123!;
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build: ./frontend/angular-app
+    ports:
+      - "4200:80"
+    depends_on:
+      webapi:
+        condition: service_started
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      SA_PASSWORD: "Password123!"
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Express"  # Бесплатная версия
+    healthcheck:
+      test: ["CMD", "/opt/mssql-tools/bin/sqlcmd", "-U", "sa", "-P", "Password123!", "-Q", "SELECT 1"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql_data:/var/opt/mssql
+
+volumes:
+  sql_data:
