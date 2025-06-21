@@ -1,0 +1,8 @@
+C:\PrimLab\PrimLab\backend\WebAPI\obj\Debug\net9.0\WebAPI.csproj.AssemblyReference.cache
+C:\PrimLab\PrimLab\backend\WebAPI\obj\Debug\net9.0\WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\PrimLab\PrimLab\backend\WebAPI\obj\Debug\net9.0\WebAPI.AssemblyInfoInputs.cache
+C:\PrimLab\PrimLab\backend\WebAPI\obj\Debug\net9.0\WebAPI.AssemblyInfo.cs
+C:\PrimLab\PrimLab\backend\WebAPI\obj\Debug\net9.0\WebAPI.csproj.CoreCompileInputs.cache
+C:\PrimLab\PrimLab\backend\WebAPI\obj\Debug\net9.0\WebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\PrimLab\PrimLab\backend\WebAPI\obj\Debug\net9.0\WebAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\PrimLab\PrimLab\backend\WebAPI\obj\Debug\net9.0\WebAPI.sourcelink.json

@@ -1,10 +1,14 @@
 services:
   webapi:
-    build: ./backend/WebAPI
+    build:
+      context: ./backend  # Указываем папку backend как контекст
+      dockerfile: Dockerfile
     ports:
       - "5000:80"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - DOTNET_RUNNING_IN_CONTAINER=true
+      - DOTNET_VERSION=8.0
       - ConnectionStrings__DefaultConnection=Server=db;Database=PrimLabDB;User=sa;Password=Password123!;
     depends_on:
       db:
