@@ -28,6 +28,13 @@ public class AppDbContext : DbContext
             .HasMany(c => c.Orders) // У клиента много заказов
             .WithOne(o => o.Client) // У заказа один клиент
             .HasForeignKey(o => o.ClientId);
+        
+        // Связь Client-User (1-to-1)
+        modelBuilder.Entity<Client>()
+            .HasOne(c => c.User)
+            .WithOne()
+            .HasForeignKey<Client>(c => c.UserId)
+            .OnDelete(DeleteBehavior.SetNull);
 
         modelBuilder.Entity<Order>()
             .HasMany(o => o.OrderItems) // У заказа много товаров

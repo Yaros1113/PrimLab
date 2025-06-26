@@ -1,3 +1,11 @@
+C:\PrimLab\PrimLab\backend\WebAPI\obj\Debug\net8.0\WebAPI.csproj.AssemblyReference.cache
+C:\PrimLab\PrimLab\backend\WebAPI\obj\Debug\net8.0\WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\PrimLab\PrimLab\backend\WebAPI\obj\Debug\net8.0\WebAPI.AssemblyInfoInputs.cache
+C:\PrimLab\PrimLab\backend\WebAPI\obj\Debug\net8.0\WebAPI.AssemblyInfo.cs
+C:\PrimLab\PrimLab\backend\WebAPI\obj\Debug\net8.0\WebAPI.csproj.CoreCompileInputs.cache
+C:\PrimLab\PrimLab\backend\WebAPI\obj\Debug\net8.0\WebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\PrimLab\PrimLab\backend\WebAPI\obj\Debug\net8.0\WebAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\PrimLab\PrimLab\backend\WebAPI\obj\Debug\net8.0\WebAPI.sourcelink.json
 C:\PrimLab\PrimLab\backend\WebAPI\bin\Debug\net8.0\appsettings.Development.json
 C:\PrimLab\PrimLab\backend\WebAPI\bin\Debug\net8.0\appsettings.json
 C:\PrimLab\PrimLab\backend\WebAPI\bin\Debug\net8.0\WebAPI.staticwebassets.endpoints.json
@@ -8,9 +16,9 @@ C:\PrimLab\PrimLab\backend\WebAPI\bin\Debug\net8.0\WebAPI.dll
 C:\PrimLab\PrimLab\backend\WebAPI\bin\Debug\net8.0\WebAPI.pdb
 C:\PrimLab\PrimLab\backend\WebAPI\bin\Debug\net8.0\Azure.Core.dll
 C:\PrimLab\PrimLab\backend\WebAPI\bin\Debug\net8.0\Azure.Identity.dll
+C:\PrimLab\PrimLab\backend\WebAPI\bin\Debug\net8.0\BCrypt.Net-Next.dll
 C:\PrimLab\PrimLab\backend\WebAPI\bin\Debug\net8.0\Humanizer.dll
 C:\PrimLab\PrimLab\backend\WebAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\PrimLab\PrimLab\backend\WebAPI\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
 C:\PrimLab\PrimLab\backend\WebAPI\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\PrimLab\PrimLab\backend\WebAPI\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
 C:\PrimLab\PrimLab\backend\WebAPI\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
@@ -28,6 +36,7 @@ C:\PrimLab\PrimLab\backend\WebAPI\bin\Debug\net8.0\Microsoft.Extensions.Dependen
 C:\PrimLab\PrimLab\backend\WebAPI\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
 C:\PrimLab\PrimLab\backend\WebAPI\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
 C:\PrimLab\PrimLab\backend\WebAPI\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\PrimLab\PrimLab\backend\WebAPI\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
 C:\PrimLab\PrimLab\backend\WebAPI\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\PrimLab\PrimLab\backend\WebAPI\bin\Debug\net8.0\Microsoft.Identity.Client.dll
 C:\PrimLab\PrimLab\backend\WebAPI\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
@@ -130,14 +139,6 @@ C:\PrimLab\PrimLab\backend\WebAPI\bin\Debug\net8.0\DAL.dll
 C:\PrimLab\PrimLab\backend\WebAPI\bin\Debug\net8.0\BLL.pdb
 C:\PrimLab\PrimLab\backend\WebAPI\bin\Debug\net8.0\Core.pdb
 C:\PrimLab\PrimLab\backend\WebAPI\bin\Debug\net8.0\DAL.pdb
-C:\PrimLab\PrimLab\backend\WebAPI\obj\Debug\net8.0\WebAPI.csproj.AssemblyReference.cache
-C:\PrimLab\PrimLab\backend\WebAPI\obj\Debug\net8.0\WebAPI.GeneratedMSBuildEditorConfig.editorconfig
-C:\PrimLab\PrimLab\backend\WebAPI\obj\Debug\net8.0\WebAPI.AssemblyInfoInputs.cache
-C:\PrimLab\PrimLab\backend\WebAPI\obj\Debug\net8.0\WebAPI.AssemblyInfo.cs
-C:\PrimLab\PrimLab\backend\WebAPI\obj\Debug\net8.0\WebAPI.csproj.CoreCompileInputs.cache
-C:\PrimLab\PrimLab\backend\WebAPI\obj\Debug\net8.0\WebAPI.MvcApplicationPartsAssemblyInfo.cs
-C:\PrimLab\PrimLab\backend\WebAPI\obj\Debug\net8.0\WebAPI.MvcApplicationPartsAssemblyInfo.cache
-C:\PrimLab\PrimLab\backend\WebAPI\obj\Debug\net8.0\WebAPI.sourcelink.json
 C:\PrimLab\PrimLab\backend\WebAPI\obj\Debug\net8.0\scopedcss\bundle\WebAPI.styles.css
 C:\PrimLab\PrimLab\backend\WebAPI\obj\Debug\net8.0\staticwebassets.build.json
 C:\PrimLab\PrimLab\backend\WebAPI\obj\Debug\net8.0\staticwebassets.development.json

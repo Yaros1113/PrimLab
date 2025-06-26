@@ -1,11 +1,28 @@
+using System.Text;
 using DAL.Data;
 using Microsoft.EntityFrameworkCore;
+using BLL.Services;
+using Core.Interfaces.Services;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Core.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Добавляем DbContext
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<AppDbContext>(options => 
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+        .AddInterceptors(new AuditSaveChangesInterceptor()));
+
+// Автоматическая регистрация валидаторов
+builder.Services.AddValidatorsFromAssemblyContaining<LoginRequestValidator>();
+
+builder.Services.AddScoped<ClientService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+
+// Добавляем сервисы авторизации
+builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("Jwt"));
+builder.Services.AddHttpContextAccessor();
 
 // Добавляем контроллеры
 builder.Services.AddControllers();
@@ -13,6 +30,33 @@ builder.Services.AddControllers();
 // Настройка Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Добавляем аутентификацию
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+        };
+    });
+
+// Добавляем авторизацию с политиками
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminOnly", policy => 
+        policy.RequireRole("admin"));
+        
+    options.AddPolicy("RequireUserRole", policy => 
+        policy.RequireRole("admin", "user"));
+});
 
 var app = builder.Build();
 
@@ -24,6 +68,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 
