@@ -6,6 +6,8 @@ using Core.Interfaces.Services;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Core.Configuration;
+using BLL.Validators;
+using Microsoft.AspNetCore.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -58,6 +60,12 @@ builder.Services.AddAuthorization(options =>
         policy.RequireRole("admin", "user"));
 });
 
+// Регистрация сервисов сущностей
+builder.Services.AddScoped<ClientService>();
+builder.Services.AddScoped<ProductService>();
+builder.Services.AddScoped<OrderService>();
+builder.Services.AddScoped<OrderTaskService>();
+
 var app = builder.Build();
 
 // Настройка конвейера запросов
@@ -71,6 +79,10 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
+
+app.UseExceptionHandler("/error");
+app.Map("/error", (HttpContext context) =>
+    Results.Problem(context.Features.Get<IExceptionHandlerFeature>()?.Error.Message ?? "Unknown error"));
 
 // Автоматическое применение миграций при запуске
 using (var scope = app.Services.CreateScope())
