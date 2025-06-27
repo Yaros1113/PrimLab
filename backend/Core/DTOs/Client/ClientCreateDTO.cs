@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
+namespace Core.DTOs.Client;
 public class ClientCreateDTO
 {
     [Required] public string? Name { get; set; }

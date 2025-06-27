@@ -1,3 +1,4 @@
+namespace Core.DTOs.Client;
 public class ClientResponseDTO
 {
     public int Id { get; set; }

@@ -1,5 +1,5 @@
 using Core.Models;
-using DAL.Data;
+using BLL.Data;
 using Microsoft.EntityFrameworkCore;
 
 public class OrderTaskService
@@ -61,7 +61,9 @@ public class OrderTaskService
 
     public async Task<OrderTaskResponseDTO?> GetTaskByIdAsync(int id)
     {
-        var task = await _context.Tasks.FindAsync(id);
+        var task = await _context.Tasks
+            .Include(t => t.Order)
+            .FirstOrDefaultAsync(t => t.Id == id);
         return task == null ? null : MapToDTO(task);
     }
 
@@ -90,14 +92,28 @@ public class OrderTaskService
         return true;
     }
 
-    private static OrderTaskResponseDTO MapToDTO(OrderTask task) => new()
+    public async Task<OrderTaskResponseDTO> UpdateTaskStatusAsync(int id, bool status)
     {
-        Id = task.Id,
-        OrderId = task.OrderId,
-        Title = task.Title,
-        Description = task.Description,
-        Status = task.Status,
-        CreatedDate = task.CreatedDate,
-        StoreAddress = task.StoreAddress
-    };
+        var task = await _context.Tasks.FindAsync(id);
+        if (task == null) return null;
+
+        task.Status = status;
+        await _context.SaveChangesAsync();
+        
+        return MapToDTO(task);
+    }
+
+    private static OrderTaskResponseDTO MapToDTO(OrderTask task)
+    {
+        return new OrderTaskResponseDTO
+        {
+            Id = task.Id,
+            OrderId = task.Order?.Id ?? 0, // Защита от null
+            Title = task.Title ?? string.Empty,
+            StoreAddress = task.StoreAddress ?? string.Empty,
+            Description = task.Description,
+            Status = task.Status,
+            CreatedDate = task.CreatedDate
+        };
+    }
 }

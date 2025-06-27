@@ -173,3 +173,11 @@ Thumbs.db
 
 /backend/.vs
 
+*.bin
+
+/backend/WebAPI/bin
+/backend/WebAPI/obj
+/backend/Core/bin
+/backend/Core/obj
+/backend/BLL/bin
+/backend/BLL/obj

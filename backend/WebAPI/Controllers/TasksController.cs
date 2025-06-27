@@ -1,119 +1,52 @@
-using Core.Models;
-using DAL.Data;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
-public class OrderService
+[ApiController]
+[Route("api/[controller]")]
+[Authorize(Policy = "RequireUserRole")]
+public class TasksController : ControllerBase
 {
-    private readonly AppDbContext _context;
+    private readonly OrderTaskService _service;
 
-    public OrderService(AppDbContext context) => _context = context;
+    public TasksController(OrderTaskService service) => _service = service;
 
-    public async Task<OrderResponseDTO> CreateOrderAsync(OrderCreateDTO dto)
+    [HttpPost]
+    public async Task<IActionResult> Create(OrderTaskCreateDTO dto)
     {
-        using var transaction = await _context.Database.BeginTransactionAsync();
-        
-        try
-        {
-            // Создаем заказ
-            var order = new Order
-            {
-                ClientId = dto.ClientId,
-                OrderDate = dto.OrderDate,
-                DeliveryDate = dto.DeliveryDate
-            };
-            
-            await _context.Orders.AddAsync(order);
-            await _context.SaveChangesAsync();
-
-            // Добавляем элементы заказа
-            foreach (var item in dto.Items)
-            {
-                var product = await _context.Products.FindAsync(item.ProductId)
-                    ?? throw new Exception($"Product not found: {item.ProductId}");
-                
-                _context.OrderItems.Add(new OrderItem
-                {
-                    OrderId = order.Id,
-                    ProductId = item.ProductId,
-                    Quantity = item.Quantity,
-                    PriceAtOrder = product.Price
-                });
-            }
-            
-            await _context.SaveChangesAsync();
-            await transaction.CommitAsync();
-            
-            return await GetOrderByIdAsync(order.Id);
-        }
-        catch
-        {
-            await transaction.RollbackAsync();
-            throw;
-        }
+        var task = await _service.CreateTaskAsync(dto);
+        return CreatedAtAction(nameof(Get), new { id = task.Id }, task);
     }
 
-    public async Task<PagedList<OrderResponseDTO>> GetAllOrdersAsync(
-        int page = 1,
-        int pageSize = 10,
-        string search = "",
-        string sortBy = "OrderDate",
-        bool ascending = false)
+    [HttpGet]
+    public async Task<IActionResult> GetAll(
+        [FromQuery] int page = 1,
+        [FromQuery] int pageSize = 10,
+        [FromQuery] string search = "",
+        [FromQuery] string sortBy = "CreatedDate",
+        [FromQuery] bool ascending = false)
     {
-        var query = _context.Orders
-            .Include(o => o.Client)
-            .Include(o => o.OrderItems)
-                .ThenInclude(oi => oi.Product)
-            .AsQueryable();
-
-        // Фильтрация по клиенту
-        if (!string.IsNullOrEmpty(search))
-            query = query.Where(o => o.Client.Name.Contains(search));
-
-        // Сортировка
-        switch (sortBy.ToLower())
-        {
-            case "orderdate":
-                query = ascending ? query.OrderBy(o => o.OrderDate) : query.OrderByDescending(o => o.OrderDate);
-                break;
-            case "deliverydate":
-                query = ascending ? query.OrderBy(o => o.DeliveryDate) : query.OrderByDescending(o => o.DeliveryDate);
-                break;
-            default:
-                query = query.OrderByDescending(o => o.OrderDate);
-                break;
-        }
-
-        return await PagedList<OrderResponseDTO>.CreateAsync(
-            query.Select(o => MapToDTO(o)),
-            page,
-            pageSize
-        );
+        var tasks = await _service.GetAllTasksAsync(page, pageSize, search, sortBy, ascending);
+        return Ok(tasks);
     }
 
-    public async Task<OrderResponseDTO?> GetOrderByIdAsync(int id)
+    [HttpGet("{id}")]
+    public async Task<IActionResult> Get(int id)
     {
-        var order = await _context.Orders
-            .Include(o => o.Client)
-            .Include(o => o.OrderItems)
-                .ThenInclude(oi => oi.Product)
-            .FirstOrDefaultAsync(o => o.Id == id);
-        
-        return order == null ? null : MapToDTO(order);
+        var task = await _service.GetTaskByIdAsync(id);
+        return task == null ? NotFound() : Ok(task);
     }
 
-    private static OrderResponseDTO MapToDTO(Order order) => new()
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(int id, OrderTaskUpdateDTO dto)
     {
-        Id = order.Id,
-        ClientId = order.ClientId,
-        ClientName = order.Client.Name,
-        OrderDate = order.OrderDate,
-        DeliveryDate = order.DeliveryDate,
-        Items = order.OrderItems.Select(oi => new OrderItemResponseDTO
-        {
-            ProductId = oi.ProductId,
-            ProductName = oi.Product.Name,
-            Quantity = oi.Quantity,
-            PriceAtOrder = oi.PriceAtOrder
-        }).ToList()
-    };
+        var task = await _service.UpdateTaskAsync(id, dto);
+        return task == null ? NotFound() : Ok(task);
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        var result = await _service.DeleteTaskAsync(id);
+        return result ? NoContent() : NotFound();
+    }
 }

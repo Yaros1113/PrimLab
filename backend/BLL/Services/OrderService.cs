@@ -1,5 +1,5 @@
 using Core.Models;
-using DAL.Data;
+using BLL.Data;
 using Microsoft.EntityFrameworkCore;
 
 public class OrderService
@@ -100,8 +100,24 @@ public class OrderService
             .Include(o => o.OrderItems)
                 .ThenInclude(oi => oi.Product)
             .FirstOrDefaultAsync(o => o.Id == id);
-        
-        return order == null ? null : MapToDTO(order);
+
+        if (order == null) return null;
+
+        return new OrderResponseDTO
+        {
+            Id = order.Id,
+            ClientId = order.ClientId,
+            ClientName = order.Client?.Name ?? "Unknown",
+            OrderDate = order.OrderDate,
+            DeliveryDate = order.DeliveryDate,
+            Items = order.OrderItems.Select(oi => new OrderItemResponseDTO
+            {
+                ProductId = oi.ProductId,
+                ProductName = oi.Product?.Name ?? "Unknown",
+                Quantity = oi.Quantity,
+                PriceAtOrder = oi.PriceAtOrder
+            }).ToList()
+        };
     }
 
     private static OrderResponseDTO MapToDTO(Order order) => new()

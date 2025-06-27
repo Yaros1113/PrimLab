@@ -9,7 +9,7 @@ using Core.Configuration;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Http;
-using DAL.Data;
+using BLL.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace BLL.Services;
@@ -120,5 +120,32 @@ public class AuthService : IAuthService
         using var rng = RandomNumberGenerator.Create();
         rng.GetBytes(randomNumber);
         return Convert.ToBase64String(randomNumber);
+    }
+
+    public async Task<AuthResponse> RefreshTokenAsync(string? refreshToken)
+    {
+        if (string.IsNullOrEmpty(refreshToken))
+            throw new SecurityTokenException("Token is required");
+
+        var user = await _context.Users
+            .FirstOrDefaultAsync(u => u.RefreshToken == refreshToken);
+
+        if (user == null || user.RefreshTokenExpiry < DateTime.UtcNow)
+            throw new SecurityTokenException("Invalid token");
+
+        var newAccessToken = GenerateJwtToken(user);
+        var newRefreshToken = GenerateRefreshToken();
+
+        user.RefreshToken = newRefreshToken;
+        user.RefreshTokenExpiry = DateTime.UtcNow.AddDays(_jwtSettings.RefreshTokenExpirationDays);
+
+        await _context.SaveChangesAsync();
+        SetRefreshTokenCookie(newRefreshToken);
+
+        return new AuthResponse
+        {
+            AccessToken = newAccessToken,
+            AccessTokenExpiration = DateTime.UtcNow.AddMinutes(_jwtSettings.AccessTokenExpirationMinutes)
+        };
     }
 }

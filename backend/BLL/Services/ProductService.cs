@@ -1,5 +1,5 @@
 using Core.Models;
-using DAL.Data;
+using BLL.Data;
 
 public class ProductService
 {
@@ -87,8 +87,8 @@ public class ProductService
     private static ProductResponseDTO MapToDTO(Product product) => new()
     {
         Id = product.Id,
-        Name = product.Name,
-        Description = product.Description,
+        Name = product.Name ?? string.Empty,
+        Description = product.Description ?? string.Empty,
         Price = product.Price
     };
 }

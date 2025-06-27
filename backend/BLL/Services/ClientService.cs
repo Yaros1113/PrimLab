@@ -1,5 +1,6 @@
 using Core.Models;
-using DAL.Data;
+using Core.DTOs.Client;
+using BLL.Data;
 using Microsoft.EntityFrameworkCore;
 
 public class ClientService
@@ -95,7 +96,15 @@ public class ClientService
         return await _context.Clients
             .Include(c => c.Phones)
             .Where(c => c.Id == id)
-            .Select(c => MapToDTO(c))
+            .Select(c => new ClientResponseDTO
+            {
+                Id = c.Id,
+                Name = c.Name ?? string.Empty,
+                Email = c.Email ?? string.Empty,
+                PhoneNumbers = c.Phones
+                    .Select(p => p.PhoneNumber ?? string.Empty)
+                    .ToList()
+            })
             .FirstOrDefaultAsync();
     }
 

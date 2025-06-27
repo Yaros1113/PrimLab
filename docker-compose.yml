@@ -29,7 +29,7 @@ services:
       ACCEPT_EULA: "Y"
       MSSQL_PID: "Express"  # Бесплатная версия
     healthcheck:
-      test: ["CMD", "/opt/mssql-tools/bin/sqlcmd", "-U", "sa", "-P", "Password123!", "-Q", "SELECT 1"]
+      test: ["CMD-SHELL", "/opt/mssql-tools/bin/sqlcmd -U sa -P Password123! -Q \"SELECT 1\""]
       interval: 10s
       timeout: 3s
       retries: 10

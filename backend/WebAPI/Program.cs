@@ -1,28 +1,55 @@
 using System.Text;
-using DAL.Data;
 using Microsoft.EntityFrameworkCore;
 using BLL.Services;
+using BLL.Data;
 using Core.Interfaces.Services;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Core.Configuration;
-using BLL.Validators;
 using Microsoft.AspNetCore.Diagnostics;
+using System.Text.Json;
+using Core.Models.Audit;
+using Microsoft.AspNetCore.Mvc;
+using FluentValidation;
+using FluentValidation.AspNetCore; // Для AddFluentValidation
+using Audit.NET; // Для Audit
+using Audit.EntityFramework; // Для AddInterceptors
+using Microsoft.Extensions.DependencyInjection; // Для AddValidatorsFromAssemblyContaining
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Добавляем DbContext
 builder.Services.AddDbContext<AppDbContext>(options => 
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
-        .AddInterceptors(new AuditSaveChangesInterceptor()));
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    options.AddInterceptors(new AuditSaveChangesInterceptor());
+});
 
-// Автоматическая регистрация валидаторов
+// Настройка Audit.NET (требует пакет Audit.NET)
+Audit.Core.Configuration.Setup()
+    .UseEntityFramework(_ => _
+        .AuditTypeMapper(t => typeof(AuditLog))
+        .AuditEntityAction<AuditLog>((ev, entry, entity) =>
+        {
+            entity.AuditData = entry.ToJson();
+            entity.EntityType = entry.EntityType.Name;
+            entity.UserName = ev.Environment.UserName;
+            entity.AuditDate = DateTime.UtcNow;
+        }));
+
+// Регистрация FluentValidation (требует пакет FluentValidation.AspNetCore)
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddFluentValidationClientsideAdapters();
 builder.Services.AddValidatorsFromAssemblyContaining<LoginRequestValidator>();
 
-builder.Services.AddScoped<ClientService>();
+// Регистрация сервисов
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ClientService>();
+builder.Services.AddScoped<ProductService>();
+builder.Services.AddScoped<OrderService>();
+builder.Services.AddScoped<OrderTaskService>();
 
-// Добавляем сервисы авторизации
+// JWT Configuration
 builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("Jwt"));
 builder.Services.AddHttpContextAccessor();
 
@@ -33,7 +60,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Добавляем аутентификацию
+// JWT Аутентификация
+var jwtKey = builder.Configuration["Jwt:Key"] ?? throw new InvalidOperationException("JWT Key not configured");
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -45,12 +73,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateIssuerSigningKey = true,
             ValidIssuer = builder.Configuration["Jwt:Issuer"],
             ValidAudience = builder.Configuration["Jwt:Audience"],
-            IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
         };
     });
 
-// Добавляем авторизацию с политиками
+// Политики авторизации
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("AdminOnly", policy => 
@@ -59,12 +86,6 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("RequireUserRole", policy => 
         policy.RequireRole("admin", "user"));
 });
-
-// Регистрация сервисов сущностей
-builder.Services.AddScoped<ClientService>();
-builder.Services.AddScoped<ProductService>();
-builder.Services.AddScoped<OrderService>();
-builder.Services.AddScoped<OrderTaskService>();
 
 var app = builder.Build();
 
@@ -80,9 +101,21 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 
-app.UseExceptionHandler("/error");
-app.Map("/error", (HttpContext context) =>
-    Results.Problem(context.Features.Get<IExceptionHandlerFeature>()?.Error.Message ?? "Unknown error"));
+// Настройка отлова глобальных ошибок
+app.UseExceptionHandler(handler =>
+{
+    handler.Run(async context =>
+    {
+        context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+        context.Response.ContentType = "application/json";
+        
+        var exception = context.Features.Get<IExceptionHandlerFeature>()?.Error;
+        await context.Response.WriteAsync(JsonSerializer.Serialize(new 
+        {
+            error = exception?.Message ?? "An unexpected error occurred"
+        }));
+    });
+});
 
 // Автоматическое применение миграций при запуске
 using (var scope = app.Services.CreateScope())
