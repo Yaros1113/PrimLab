@@ -63,7 +63,6 @@ public class AuthService : IAuthService
         // Сохраняем refresh token в БД
         user.RefreshToken = refreshToken;
         user.RefreshTokenExpiry = DateTime.UtcNow.AddDays(_jwtSettings.RefreshTokenExpirationDays);
-        _context.Users.Update(user);
         await _context.SaveChangesAsync();
 
         // Устанавливаем refresh token в HTTP-only cookie

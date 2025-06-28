@@ -18,7 +18,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Добавляем DbContext
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        sqlServerOptions => 
+        {
+            sqlServerOptions.EnableRetryOnFailure(
+                maxRetryCount: 5,
+                maxRetryDelay: TimeSpan.FromSeconds(30),
+                errorNumbersToAdd: null);
+        }
+    ));
 
 // Регистрация FluentValidation (требует пакет FluentValidation.AspNetCore)
 builder.Services.AddValidatorsFromAssemblyContaining<ClientCreateValidator>();

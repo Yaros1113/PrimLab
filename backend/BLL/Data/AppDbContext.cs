@@ -38,7 +38,7 @@ public class AppDbContext : DbContext
             .HasOne(c => c.User)
             .WithOne()
             .HasForeignKey<Client>(c => c.UserId)
-            .OnDelete(DeleteBehavior.SetNull);
+            .OnDelete(DeleteBehavior.ClientSetNull);
 
         modelBuilder.Entity<Order>()
             .HasMany(o => o.OrderItems) // У заказа много товаров
@@ -54,9 +54,17 @@ public class AppDbContext : DbContext
             .HasMany(p => p.OrderItems) // У товара много записей в заказах
             .WithOne(oi => oi.Product)
             .HasForeignKey(oi => oi.ProductId);
-        
-        modelBuilder.Entity<AuditLog>()
+
+        modelBuilder.Entity<Product>()
+            .Property(p => p.Price)
+            .HasPrecision(18, 2); // 18 цифр всего, 2 после запятой
+
+        modelBuilder.Entity<OrderItem>()
+            .Property(oi => oi.PriceAtOrder)
+            .HasPrecision(18, 2);
+
+        /*modelBuilder.Entity<AuditLog>()
             .Property(a => a.AuditDate)
-            .HasDefaultValueSql("GETUTCDATE()");
+            .HasDefaultValueSql("GETUTCDATE()");*/
     }
 }

@@ -10,8 +10,6 @@ public class OrderService
 
     public async Task<OrderResponseDTO> CreateOrderAsync(OrderCreateDTO dto)
     {
-        using var transaction = await _context.Database.BeginTransactionAsync();
-        
         try
         {
             var client = await _context.Clients.FindAsync(dto.ClientId);
@@ -44,13 +42,11 @@ public class OrderService
             }
             
             await _context.SaveChangesAsync();
-            await transaction.CommitAsync();
             
             return await GetOrderByIdAsync(order.Id);
         }
         catch
         {
-            await transaction.RollbackAsync();
             throw;
         }
     }

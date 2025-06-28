@@ -4,19 +4,16 @@ using BLL.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace BLL.Data.Migrations
+namespace BLL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250628114016_InitialCreate")]
-    partial class InitialCreate
+    partial class AppDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -42,9 +39,7 @@ namespace BLL.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("AuditDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValueSql("GETUTCDATE()");
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("EntityId")
                         .HasColumnType("nvarchar(max)");
@@ -259,8 +254,7 @@ namespace BLL.Data.Migrations
                 {
                     b.HasOne("Core.Models.User", "User")
                         .WithOne()
-                        .HasForeignKey("Core.Models.Client", "UserId")
-                        .OnDelete(DeleteBehavior.SetNull);
+                        .HasForeignKey("Core.Models.Client", "UserId");
 
                     b.Navigation("User");
                 });

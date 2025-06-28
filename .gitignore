@@ -181,3 +181,4 @@ Thumbs.db
 /backend/Core/obj
 /backend/BLL/bin
 /backend/BLL/obj
+/mssql_data
