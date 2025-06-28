@@ -7,48 +7,52 @@
       "RelativeMoniker": "D:0:0:{71432BE7-31E7-4881-AA30-A413758203A2}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{16C5CE66-2DAD-4C13-AEED-AF49F4C7319A}|Core\\Core.csproj|c:\\primlab\\primlab\\backend\\core\\dtos\\client\\clientresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{16C5CE66-2DAD-4C13-AEED-AF49F4C7319A}|Core\\Core.csproj|solutionrelative:core\\dtos\\client\\clientresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F601D621-AD2F-4C63-BAAA-D08711BF0939}|BLL\\BLL.csproj|c:\\primlab\\primlab\\backend\\bll\\services\\clientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F601D621-AD2F-4C63-BAAA-D08711BF0939}|BLL\\BLL.csproj|solutionrelative:bll\\services\\clientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F601D621-AD2F-4C63-BAAA-D08711BF0939}|BLL\\BLL.csproj|c:\\primlab\\primlab\\backend\\bll\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F601D621-AD2F-4C63-BAAA-D08711BF0939}|BLL\\BLL.csproj|solutionrelative:bll\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F601D621-AD2F-4C63-BAAA-D08711BF0939}|BLL\\BLL.csproj|c:\\primlab\\primlab\\backend\\bll\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F601D621-AD2F-4C63-BAAA-D08711BF0939}|BLL\\BLL.csproj|solutionrelative:bll\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F601D621-AD2F-4C63-BAAA-D08711BF0939}|BLL\\BLL.csproj|c:\\primlab\\primlab\\backend\\bll\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F601D621-AD2F-4C63-BAAA-D08711BF0939}|BLL\\BLL.csproj|solutionrelative:bll\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F601D621-AD2F-4C63-BAAA-D08711BF0939}|BLL\\BLL.csproj|c:\\primlab\\primlab\\backend\\bll\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F601D621-AD2F-4C63-BAAA-D08711BF0939}|BLL\\BLL.csproj|solutionrelative:bll\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F601D621-AD2F-4C63-BAAA-D08711BF0939}|BLL\\BLL.csproj|c:\\primlab\\primlab\\backend\\bll\\services\\ordertaskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F601D621-AD2F-4C63-BAAA-D08711BF0939}|BLL\\BLL.csproj|solutionrelative:bll\\services\\ordertaskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F601D621-AD2F-4C63-BAAA-D08711BF0939}|BLL\\BLL.csproj|c:\\primlab\\primlab\\backend\\bll\\services\\clientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F601D621-AD2F-4C63-BAAA-D08711BF0939}|BLL\\BLL.csproj|solutionrelative:bll\\services\\clientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16C5CE66-2DAD-4C13-AEED-AF49F4C7319A}|Core\\Core.csproj|c:\\primlab\\primlab\\backend\\core\\dtos\\client\\clientresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16C5CE66-2DAD-4C13-AEED-AF49F4C7319A}|Core\\Core.csproj|solutionrelative:core\\dtos\\client\\clientresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16C5CE66-2DAD-4C13-AEED-AF49F4C7319A}|Core\\Core.csproj|c:\\primlab\\primlab\\backend\\core\\models\\audit\\auditlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16C5CE66-2DAD-4C13-AEED-AF49F4C7319A}|Core\\Core.csproj|solutionrelative:core\\models\\audit\\auditlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71432BE7-31E7-4881-AA30-A413758203A2}|WebAPI\\WebAPI.csproj|c:\\primlab\\primlab\\backend\\webapi\\controllers\\clientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71432BE7-31E7-4881-AA30-A413758203A2}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\clientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{16C5CE66-2DAD-4C13-AEED-AF49F4C7319A}|Core\\Core.csproj|c:\\primlab\\primlab\\backend\\core\\dtos\\client\\clientupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{16C5CE66-2DAD-4C13-AEED-AF49F4C7319A}|Core\\Core.csproj|solutionrelative:core\\dtos\\client\\clientupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F601D621-AD2F-4C63-BAAA-D08711BF0939}|BLL\\BLL.csproj|c:\\primlab\\primlab\\backend\\bll\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F601D621-AD2F-4C63-BAAA-D08711BF0939}|BLL\\BLL.csproj|solutionrelative:bll\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{71432BE7-31E7-4881-AA30-A413758203A2}|WebAPI\\WebAPI.csproj|c:\\primlab\\primlab\\backend\\webapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71432BE7-31E7-4881-AA30-A413758203A2}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F601D621-AD2F-4C63-BAAA-D08711BF0939}|BLL\\BLL.csproj|c:\\primlab\\primlab\\backend\\bll\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F601D621-AD2F-4C63-BAAA-D08711BF0939}|BLL\\BLL.csproj|solutionrelative:bll\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F601D621-AD2F-4C63-BAAA-D08711BF0939}|BLL\\BLL.csproj|c:\\primlab\\primlab\\backend\\bll\\services\\ordertaskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F601D621-AD2F-4C63-BAAA-D08711BF0939}|BLL\\BLL.csproj|solutionrelative:bll\\services\\ordertaskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{16C5CE66-2DAD-4C13-AEED-AF49F4C7319A}|Core\\Core.csproj|c:\\primlab\\primlab\\backend\\core\\dtos\\client\\clientcreatevalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{16C5CE66-2DAD-4C13-AEED-AF49F4C7319A}|Core\\Core.csproj|solutionrelative:core\\dtos\\client\\clientcreatevalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F601D621-AD2F-4C63-BAAA-D08711BF0939}|BLL\\BLL.csproj|c:\\primlab\\primlab\\backend\\bll\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F601D621-AD2F-4C63-BAAA-D08711BF0939}|BLL\\BLL.csproj|solutionrelative:bll\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{16C5CE66-2DAD-4C13-AEED-AF49F4C7319A}|Core\\Core.csproj|c:\\primlab\\primlab\\backend\\core\\models\\ordertask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{16C5CE66-2DAD-4C13-AEED-AF49F4C7319A}|Core\\Core.csproj|solutionrelative:core\\models\\ordertask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{16C5CE66-2DAD-4C13-AEED-AF49F4C7319A}|Core\\Core.csproj|c:\\primlab\\primlab\\backend\\core\\models\\audit\\auditlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{16C5CE66-2DAD-4C13-AEED-AF49F4C7319A}|Core\\Core.csproj|solutionrelative:core\\models\\audit\\auditlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{16C5CE66-2DAD-4C13-AEED-AF49F4C7319A}|Core\\Core.csproj|c:\\primlab\\primlab\\backend\\core\\dtos\\ordertask\\updatetaskstatusdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -59,20 +63,12 @@
       "RelativeMoniker": "D:0:0:{16C5CE66-2DAD-4C13-AEED-AF49F4C7319A}|Core\\Core.csproj|solutionrelative:core\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{71432BE7-31E7-4881-AA30-A413758203A2}|WebAPI\\WebAPI.csproj|c:\\primlab\\primlab\\backend\\webapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{71432BE7-31E7-4881-AA30-A413758203A2}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{16C5CE66-2DAD-4C13-AEED-AF49F4C7319A}|Core\\Core.csproj|c:\\primlab\\primlab\\backend\\core\\interfaces\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{16C5CE66-2DAD-4C13-AEED-AF49F4C7319A}|Core\\Core.csproj|solutionrelative:core\\interfaces\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{71432BE7-31E7-4881-AA30-A413758203A2}|WebAPI\\WebAPI.csproj|c:\\primlab\\primlab\\backend\\webapi\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{71432BE7-31E7-4881-AA30-A413758203A2}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{71432BE7-31E7-4881-AA30-A413758203A2}|WebAPI\\WebAPI.csproj|c:\\primlab\\primlab\\backend\\webapi\\controllers\\clientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{71432BE7-31E7-4881-AA30-A413758203A2}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\clientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F601D621-AD2F-4C63-BAAA-D08711BF0939}|BLL\\BLL.csproj|c:\\primlab\\primlab\\backend\\bll\\validators\\productcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -107,25 +103,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ClientService.cs",
-              "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\BLL\\Services\\ClientService.cs",
-              "RelativeDocumentMoniker": "BLL\\Services\\ClientService.cs",
-              "ToolTip": "C:\\PrimLab\\PrimLab\\backend\\BLL\\Services\\ClientService.cs",
-              "RelativeToolTip": "BLL\\Services\\ClientService.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAwwF0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-26T00:53:13.968Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "OrderService.cs",
               "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\BLL\\Services\\OrderService.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\OrderService.cs",
               "ToolTip": "C:\\PrimLab\\PrimLab\\backend\\BLL\\Services\\OrderService.cs",
               "RelativeToolTip": "BLL\\Services\\OrderService.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAQwHgAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAACkAAAAAAAAAAAAwwDsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-26T04:14:21.271Z",
               "EditorCaption": ""
@@ -133,6 +116,58 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\BLL\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "BLL\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\PrimLab\\PrimLab\\backend\\BLL\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "BLL\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAUwDkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T07:00:56.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\BLL\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\AuthService.cs",
+              "ToolTip": "C:\\PrimLab\\PrimLab\\backend\\BLL\\Services\\AuthService.cs",
+              "RelativeToolTip": "BLL\\Services\\AuthService.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAwwEAAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T00:14:21.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\WebAPI\\Program.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Program.cs",
+              "ToolTip": "C:\\PrimLab\\PrimLab\\backend\\WebAPI\\Program.cs",
+              "RelativeToolTip": "WebAPI\\Program.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T00:34:48.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ClientService.cs",
+              "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\BLL\\Services\\ClientService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\ClientService.cs",
+              "ToolTip": "C:\\PrimLab\\PrimLab\\backend\\BLL\\Services\\ClientService.cs",
+              "RelativeToolTip": "BLL\\Services\\ClientService.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAwwF0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T00:53:13.968Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "ClientResponseDTO.cs",
               "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\Core\\DTOs\\Client\\ClientResponseDTO.cs",
               "RelativeDocumentMoniker": "Core\\DTOs\\Client\\ClientResponseDTO.cs",
@@ -145,46 +180,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\WebAPI\\Program.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Program.cs",
-              "ToolTip": "C:\\PrimLab\\PrimLab\\backend\\WebAPI\\Program.cs",
-              "RelativeToolTip": "WebAPI\\Program.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAAAFQAAABpAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-26T00:34:48.844Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\BLL\\Services\\ProductService.cs",
-              "RelativeDocumentMoniker": "BLL\\Services\\ProductService.cs",
-              "ToolTip": "C:\\PrimLab\\PrimLab\\backend\\BLL\\Services\\ProductService.cs",
-              "RelativeToolTip": "BLL\\Services\\ProductService.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAswFoAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-26T01:58:41.725Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "OrderTaskService.cs",
-              "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\BLL\\Services\\OrderTaskService.cs",
-              "RelativeDocumentMoniker": "BLL\\Services\\OrderTaskService.cs",
-              "ToolTip": "C:\\PrimLab\\PrimLab\\backend\\BLL\\Services\\OrderTaskService.cs",
-              "RelativeToolTip": "BLL\\Services\\OrderTaskService.cs",
-              "ViewState": "AgIAAGQAAAAAAAAAAAAwwGsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-27T07:12:43.221Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "AuditLog.cs",
+              "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\Core\\Models\\Audit\\AuditLog.cs",
+              "RelativeDocumentMoniker": "Core\\Models\\Audit\\AuditLog.cs",
+              "ToolTip": "C:\\PrimLab\\PrimLab\\backend\\Core\\Models\\Audit\\AuditLog.cs",
+              "RelativeToolTip": "Core\\Models\\Audit\\AuditLog.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T06:06:28.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ClientsController.cs",
+              "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\WebAPI\\Controllers\\ClientsController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\ClientsController.cs",
+              "ToolTip": "C:\\PrimLab\\PrimLab\\backend\\WebAPI\\Controllers\\ClientsController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\ClientsController.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAgwAIAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T00:51:01.529Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "ClientUpdateDTO.cs",
               "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\Core\\DTOs\\Client\\ClientUpdateDTO.cs",
               "RelativeDocumentMoniker": "Core\\DTOs\\Client\\ClientUpdateDTO.cs",
@@ -197,46 +219,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\BLL\\Services\\AuthService.cs",
-              "RelativeDocumentMoniker": "BLL\\Services\\AuthService.cs",
-              "ToolTip": "C:\\PrimLab\\PrimLab\\backend\\BLL\\Services\\AuthService.cs",
-              "RelativeToolTip": "BLL\\Services\\AuthService.cs",
-              "ViewState": "AgIAAG4AAAAAAAAAAAAuwH8AAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-26T00:14:21.92Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\BLL\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "BLL\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\PrimLab\\PrimLab\\backend\\BLL\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "BLL\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-27T07:00:56.943Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "ClientCreateValidator.cs",
-              "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\Core\\DTOs\\Client\\ClientCreateValidator.cs",
-              "RelativeDocumentMoniker": "Core\\DTOs\\Client\\ClientCreateValidator.cs",
-              "ToolTip": "C:\\PrimLab\\PrimLab\\backend\\Core\\DTOs\\Client\\ClientCreateValidator.cs",
-              "RelativeToolTip": "Core\\DTOs\\Client\\ClientCreateValidator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\WebAPI\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\PrimLab\\PrimLab\\backend\\WebAPI\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAwB4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-27T05:42:58.861Z",
+              "WhenOpened": "2025-06-27T04:48:59.853Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 10,
+              "Title": "OrderTaskService.cs",
+              "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\BLL\\Services\\OrderTaskService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\OrderTaskService.cs",
+              "ToolTip": "C:\\PrimLab\\PrimLab\\backend\\BLL\\Services\\OrderTaskService.cs",
+              "RelativeToolTip": "BLL\\Services\\OrderTaskService.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAuwHIAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T07:12:43.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\BLL\\Services\\ProductService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\ProductService.cs",
+              "ToolTip": "C:\\PrimLab\\PrimLab\\backend\\BLL\\Services\\ProductService.cs",
+              "RelativeToolTip": "BLL\\Services\\ProductService.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAswFoAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T01:58:41.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "UpdateTaskStatusDTO.cs",
               "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\Core\\DTOs\\OrderTask\\UpdateTaskStatusDTO.cs",
               "RelativeDocumentMoniker": "Core\\DTOs\\OrderTask\\UpdateTaskStatusDTO.cs",
@@ -249,20 +271,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AuditLog.cs",
-              "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\Core\\Models\\Audit\\AuditLog.cs",
-              "RelativeDocumentMoniker": "Core\\Models\\Audit\\AuditLog.cs",
-              "ToolTip": "C:\\PrimLab\\PrimLab\\backend\\Core\\Models\\Audit\\AuditLog.cs",
-              "RelativeToolTip": "Core\\Models\\Audit\\AuditLog.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-27T06:06:28.946Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "OrderTask.cs",
               "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\Core\\Models\\OrderTask.cs",
               "RelativeDocumentMoniker": "Core\\Models\\OrderTask.cs",
@@ -275,7 +284,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "OrderItem.cs",
               "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\Core\\Models\\OrderItem.cs",
               "RelativeDocumentMoniker": "Core\\Models\\OrderItem.cs",
@@ -284,19 +293,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-27T05:46:22.12Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\WebAPI\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\PrimLab\\PrimLab\\backend\\WebAPI\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "WebAPI\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAYwCMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-27T04:48:59.853Z",
               "EditorCaption": ""
             },
             {
@@ -328,19 +324,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 17,
-              "Title": "ClientsController.cs",
-              "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\WebAPI\\Controllers\\ClientsController.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Controllers\\ClientsController.cs",
-              "ToolTip": "C:\\PrimLab\\PrimLab\\backend\\WebAPI\\Controllers\\ClientsController.cs",
-              "RelativeToolTip": "WebAPI\\Controllers\\ClientsController.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAA3wBcAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-26T00:51:01.529Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
               "Title": "ProductCreateDTO.cs",
               "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\BLL\\Validators\\ProductCreateDTO.cs",
               "RelativeDocumentMoniker": "BLL\\Validators\\ProductCreateDTO.cs",
@@ -353,7 +336,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 20,
               "Title": "OrderItemResponseDTO.cs",
               "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\Core\\DTOs\\Order\\OrderItemResponseDTO.cs",
               "RelativeDocumentMoniker": "Core\\DTOs\\Order\\OrderItemResponseDTO.cs",
@@ -366,7 +349,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 19,
               "Title": "OrderResponseDTO.cs",
               "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\Core\\DTOs\\Order\\OrderResponseDTO.cs",
               "RelativeDocumentMoniker": "Core\\DTOs\\Order\\OrderResponseDTO.cs",
@@ -379,7 +362,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 18,
               "Title": "OrderItemDTO.cs",
               "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\Core\\DTOs\\Order\\OrderItemDTO.cs",
               "RelativeDocumentMoniker": "Core\\DTOs\\Order\\OrderItemDTO.cs",
@@ -392,7 +375,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 21,
               "Title": "PagedList.cs",
               "DocumentMoniker": "C:\\PrimLab\\PrimLab\\backend\\Core\\Utilities\\PagedList.cs",
               "RelativeDocumentMoniker": "Core\\Utilities\\PagedList.cs",

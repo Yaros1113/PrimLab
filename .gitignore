@@ -182,3 +182,6 @@ Thumbs.db
 /backend/BLL/bin
 /backend/BLL/obj
 /mssql_data
+/backend/.vs
+backend/.vs/PrimLabSolution/v17/.suo
+*.bin
