@@ -18,21 +18,12 @@ public class AuthController : ControllerBase
     public AuthController(IAuthService authService) => _authService = authService;
 
     [HttpPost("register")]
-    [AllowAnonymous]
-    public async Task<IActionResult> Register(LoginRequest request)
+    public async Task<IActionResult> Register(RegisterRequest request)
     {
-        var user = new User
-        {
-            Username = request.Username,
-            PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password),
-            Role = "user" // По умолчанию
-        };
-
-        await _context.Users.AddAsync(user);
-        await _context.SaveChangesAsync();
-
-        return Ok();
+        var user = await _authService.RegisterAsync(request.Username, request.Password);
+        return Ok(new { message = "Registration successful" });
     }
+
     public class RegisterRequest
     {
         [Required] public required string Username { get; set; }

@@ -20,6 +20,8 @@ public class AppDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<AuditLog>().HasKey(a => a.Id);
+
         // Настройка связей между таблицами
         modelBuilder.Entity<Client>()
             .HasMany(c => c.Phones) // У клиента много телефонов

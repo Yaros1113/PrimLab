@@ -8,39 +8,43 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Core.Configuration;
 using Microsoft.AspNetCore.Diagnostics;
 using System.Text.Json;
-using Core.Models.Audit;
-using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.AspNetCore; // Для AddFluentValidation
-using Audit.NET; // Для Audit
-using Audit.EntityFramework; // Для AddInterceptors
-using Microsoft.Extensions.DependencyInjection; // Для AddValidatorsFromAssemblyContaining
+using Audit.Core;
+using BLL.Validators;
+//using Core.Models.Audit;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Добавляем DbContext
-builder.Services.AddDbContext<AppDbContext>(options => 
-{
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-    options.AddInterceptors(new AuditSaveChangesInterceptor());
-});
-
-// Настройка Audit.NET (требует пакет Audit.NET)
-Audit.Core.Configuration.Setup()
-    .UseEntityFramework(_ => _
-        .AuditTypeMapper(t => typeof(AuditLog))
-        .AuditEntityAction<AuditLog>((ev, entry, entity) =>
-        {
-            entity.AuditData = entry.ToJson();
-            entity.EntityType = entry.EntityType.Name;
-            entity.UserName = ev.Environment.UserName;
-            entity.AuditDate = DateTime.UtcNow;
-        }));
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Регистрация FluentValidation (требует пакет FluentValidation.AspNetCore)
+builder.Services.AddValidatorsFromAssemblyContaining<ClientCreateValidator>();
 builder.Services.AddFluentValidationAutoValidation();
-builder.Services.AddFluentValidationClientsideAdapters();
 builder.Services.AddValidatorsFromAssemblyContaining<LoginRequestValidator>();
+
+/*// Настройка Audit.NET
+Audit.Core.Configuration.Setup()
+    .UseEntityFramework(ef => ef
+        .AuditTypeExplicitMapper(m => m
+            .Map<AuditLog, AuditLog>((eventEntry, auditEntry) => typeof(AuditLog)) // Явное указание типа
+            .AuditEntityAction<AuditLog>((ev, entry, entity) =>
+            {
+                entity.AuditData = entry.ToJson();
+                entity.EntityType = entry.EntityType.Name;
+                entity.ActionType = entry.Action;
+                entity.EntityId = entry.PrimaryKey.First().Value.ToString();
+                entity.AuditDate = DateTime.UtcNow;
+                entity.UserName = ev.Environment.UserName;
+            })
+        )
+    );*/
+
+// Добавление CORS
+builder.Services.AddCors(options => options.AddPolicy("AllowAll", policy =>
+    policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
 
 // Регистрация сервисов
 builder.Services.AddScoped<IAuthService, AuthService>();
@@ -96,6 +100,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("AllowAll");
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();

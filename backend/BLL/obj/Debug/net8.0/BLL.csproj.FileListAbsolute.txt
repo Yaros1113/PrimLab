@@ -1,4 +1,5 @@
 C:\PrimLab\PrimLab\backend\BLL\bin\Debug\net8.0\BLL.deps.json
+C:\PrimLab\PrimLab\backend\BLL\bin\Debug\net8.0\BLL.runtimeconfig.json
 C:\PrimLab\PrimLab\backend\BLL\bin\Debug\net8.0\BLL.dll
 C:\PrimLab\PrimLab\backend\BLL\bin\Debug\net8.0\BLL.pdb
 C:\PrimLab\PrimLab\backend\BLL\bin\Debug\net8.0\Core.dll
@@ -13,4 +14,5 @@ C:\PrimLab\PrimLab\backend\BLL\obj\Debug\net8.0\BLL.csproj.Up2Date
 C:\PrimLab\PrimLab\backend\BLL\obj\Debug\net8.0\BLL.dll
 C:\PrimLab\PrimLab\backend\BLL\obj\Debug\net8.0\refint\BLL.dll
 C:\PrimLab\PrimLab\backend\BLL\obj\Debug\net8.0\BLL.pdb
+C:\PrimLab\PrimLab\backend\BLL\obj\Debug\net8.0\BLL.genruntimeconfig.cache
 C:\PrimLab\PrimLab\backend\BLL\obj\Debug\net8.0\ref\BLL.dll

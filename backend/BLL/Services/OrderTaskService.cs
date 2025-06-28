@@ -103,17 +103,14 @@ public class OrderTaskService
         return MapToDTO(task);
     }
 
-    private static OrderTaskResponseDTO MapToDTO(OrderTask task)
+    private static OrderTaskResponseDTO MapToDTO(OrderTask task) => new()
     {
-        return new OrderTaskResponseDTO
-        {
-            Id = task.Id,
-            OrderId = task.Order?.Id ?? 0, // Защита от null
-            Title = task.Title ?? string.Empty,
-            StoreAddress = task.StoreAddress ?? string.Empty,
-            Description = task.Description,
-            Status = task.Status,
-            CreatedDate = task.CreatedDate
-        };
-    }
+        Id = task.Id,
+        OrderId = task.OrderId,
+        Title = task.Title,
+        Description = task.Description,
+        Status = task.Status,
+        CreatedDate = task.CreatedDate,
+        StoreAddress = task.StoreAddress
+    };
 }
