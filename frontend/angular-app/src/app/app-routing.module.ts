@@ -1,8 +1,12 @@
-import { Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
-  { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
+  { 
+    path: 'auth', 
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) 
+  },
   { 
     path: 'clients', 
     loadChildren: () => import('./clients/clients.module').then(m => m.ClientsModule),
@@ -21,3 +25,9 @@ const routes: Routes = [
   { path: '', redirectTo: '/clients', pathMatch: 'full' },
   { path: '**', redirectTo: '/clients' }
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

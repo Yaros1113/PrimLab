@@ -4,6 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { TasksService } from '../../services/tasks.service';
 import { Task } from '../../models/task.model';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-task-list',
@@ -24,7 +25,10 @@ export class TaskListComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private tasksService: TasksService) {}
+  constructor(
+    private tasksService: TasksService,
+    private snackBar: MatSnackBar
+  ) {}
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -77,5 +81,33 @@ export class TaskListComponent implements AfterViewInit {
       },
       error: (error) => console.error('Error updating task status:', error)
     });
+  }
+
+  deleteTask(id: number) {
+    if (confirm('Вы уверены, что хотите удалить эту задачу?')) {
+      this.tasksService.deleteTask(id).subscribe({
+        next: () => {
+          // Удаление задачи из локального списка
+          this.dataSource.data = this.dataSource.data.filter(task => task.id !== id);
+          this.totalItems--;
+          
+          // Обновление отображения таблицы
+          this.dataSource._updateChangeSubscription();
+          this.dataSource.paginator = this.paginator;
+          
+          // Показать уведомление
+          this.snackBar.open('Задача успешно удалена', 'Закрыть', {
+            duration: 3000
+          });
+        },
+        error: (error) => {
+          console.error('Ошибка при удалении задачи:', error);
+          this.snackBar.open('Не удалось удалить задачу', 'Закрыть', {
+            duration: 3000,
+            panelClass: ['error-snackbar']
+          });
+        }
+      });
+    }
   }
 }

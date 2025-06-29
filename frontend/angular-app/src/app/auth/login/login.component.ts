@@ -22,7 +22,10 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      const credentials = this.loginForm.value;
+      const credentials = {
+        username: this.loginForm.value.username ?? '',
+        password: this.loginForm.value.password ?? ''
+      };
       this.authService.login(credentials);
     }
   }

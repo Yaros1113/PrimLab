@@ -30,4 +30,8 @@ export class TasksService {
   updateTaskStatus(id: number, status: boolean): Observable<Task> {
     return this.http.patch<Task>(`${this.apiUrl}/${id}/status`, { status });
   }
+
+  deleteTask(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
 }

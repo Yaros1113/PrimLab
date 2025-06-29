@@ -23,7 +23,8 @@ export class RegisterComponent {
 
   onSubmit() {
     if (this.registerForm.valid && this.passwordsMatch()) {
-      const { username, password } = this.registerForm.value;
+      const username = this.registerForm.get('username')?.value ?? '';
+      const password = this.registerForm.get('password')?.value ?? '';
       this.authService.register({ username, password });
     }
   }

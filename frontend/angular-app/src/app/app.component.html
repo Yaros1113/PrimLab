@@ -3,11 +3,11 @@
   
   <span class="spacer"></span>
   
-  <button mat-button [routerLink]="['/clients']">Clients</button>
-  <button mat-button [routerLink]="['/products']">Products</button>
-  <button mat-button [routerLink]="['/todo']">Tasks</button>
+  <button mat-button routerLink="/clients">Клиенты</button>
+  <button mat-button routerLink="/products">Продукты</button>
+  <button mat-button routerLink="/todo">Задачи</button>
   
-  <button mat-button (click)="logout()">Logout</button>
+  <button mat-button (click)="logout()">Выход из системы</button>
 </mat-toolbar>
 
 <div class="content">
