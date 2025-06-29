@@ -1,0 +1,70 @@
+<div class="task-list-container">
+  <div class="toolbar">
+    <mat-form-field appearance="outline">
+      <mat-label>Search</mat-label>
+      <input matInput [(ngModel)]="search" (keyup.enter)="applyFilter()">
+      <button matSuffix mat-icon-button (click)="applyFilter()">
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+
+  <table mat-table [dataSource]="dataSource" matSort (matSortChange)="onSortChange($event)">
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+      <td mat-cell *matCellDef="let task">{{ task.id }}</td>
+    </ng-container>
+
+    <!-- Title Column -->
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
+      <td mat-cell *matCellDef="let task">{{ task.title }}</td>
+    </ng-container>
+
+    <!-- Status Column -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let task">
+        <mat-checkbox [checked]="task.status" (change)="updateTaskStatus(task, $event.checked)">
+          {{ task.status ? 'Done' : 'Pending' }}
+        </mat-checkbox>
+      </td>
+    </ng-container>
+
+    <!-- Created Date Column -->
+    <ng-container matColumnDef="createdDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Created Date</th>
+      <td mat-cell *matCellDef="let task">{{ task.createdDate | date:'short' }}</td>
+    </ng-container>
+
+    <!-- Store Address Column -->
+    <ng-container matColumnDef="storeAddress">
+      <th mat-header-cell *matHeaderCellDef>Store Address</th>
+      <td mat-cell *matCellDef="let task">{{ task.storeAddress }}</td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let task">
+        <button mat-icon-button color="primary" [routerLink]="['/todo', task.id, 'edit']">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="deleteTask(task.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [length]="totalItems"
+                 [pageSize]="pageSize"
+                 [pageIndex]="pageIndex"
+                 [pageSizeOptions]="[5, 10, 25]"
+                 (page)="onPageChange($event)">
+  </mat-paginator>
+</div>
